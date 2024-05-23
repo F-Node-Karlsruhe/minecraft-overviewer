@@ -66,7 +66,7 @@ RUN apt-get update && \
     useradd -m minecraft -u 1000 -g 1000 && \
     mkdir -p /home/minecraft/render /home/minecraft/server
 
-RUN git clone --depth=1 https://github.com/overviewer/Minecraft-Overviewer.git
+RUN git clone --depth=1 https://github.com/GregoryAM-SP/The-Minecraft-Overviewer.git
 
 WORKDIR /home/minecraft/Minecraft-Overviewer/
 RUN python3 setup.py build && \
