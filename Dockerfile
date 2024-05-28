@@ -48,19 +48,19 @@ RUN apt-get update && \
         python3-numpy \
         python3-pil \
         python3 \
-        wget && \
-    apt-get install -y --no-install-recommends \
+        wget
+RUN apt-get install -y --no-install-recommends \
         build-essential=12.9 \
         ca-certificates=20210119 \
-        curl=7.74.0-1.3+deb11u7 \
+        curl \
         git=1:2.30.2-1+deb11u2 \
         jq=1.6-2.1 \
         python3-dev=3.9.2-3 \
         python3-numpy=1:1.19.5-1 \
         python3-pil=8.1.2+dfsg-0.3+deb11u1 \
         python3=3.9.2-3 \
-        wget=1.21-1+deb11u1 && \
-    apt-get install -y --no-install-recommends optipng=0.7.7-1+b1 || apt-get install -y --no-install-recommends optipng=0.7.7-1 && \
+        wget=1.21-1+deb11u1
+RUN apt-get install -y --no-install-recommends optipng=0.7.7-1+b1 || apt-get install -y --no-install-recommends optipng=0.7.7-1 && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     groupadd minecraft -g 1000 && \
     useradd -m minecraft -u 1000 -g 1000 && \
@@ -68,7 +68,7 @@ RUN apt-get update && \
 
 RUN git clone --depth=1 https://github.com/GregoryAM-SP/The-Minecraft-Overviewer.git
 
-WORKDIR /home/minecraft/Minecraft-Overviewer/
+WORKDIR /home/minecraft/The-Minecraft-Overviewer/
 RUN python3 setup.py build && \
     python3 setup.py install
 
